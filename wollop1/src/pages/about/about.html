@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      BMR
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>คำนวณ BMR</h2>
+    <ion-item>
+        <ion-label>เพศ</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option value="a">ชาย</ion-option>
+          <ion-option value="b">หญิง</ion-option>
+        </ion-select>
+      </ion-item>
+    <p>
+        น้ำหนัก :<ion-input class="txt1" placeholder="กรุณาใส่น้ำหนัก (KG)" [(ngModel)]="weight"></ion-input>
+    </p>
+    <p>
+        ส่วนสูง :<ion-input class="txt2" placeholder="กรุณาใส่ส่วนสูง (CM)" [(ngModel)]="height"></ion-input>
+    </p>
+    <p>
+        อายุ :<ion-input class="txt3" placeholder="กรุณาใส่อายุ (Y)" [(ngModel)]="age"></ion-input>
+    </p>
+    <ion-card>
+      <ion-card-header>
+       ผลการคำนวณ 
+       <ion-badge >{{total |number:'1.2-2'}}</ion-badge>
+       
+      </ion-card-header>
+      <button class ="cal-button" ion-button (click)="showalert()">คำนวณ</button>
+      
+    </ion-card>
+
+    
+  </ion-content>

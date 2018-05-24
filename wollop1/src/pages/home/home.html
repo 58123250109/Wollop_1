@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>BMI</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h2>คำนวณ BMI</h2>
+  <p>
+      น้ำหนัก :<ion-input class="txt1" placeholder="กรุณาใส่น้ำหนัก (KG)" [(ngModel)]="weight"></ion-input>
+  </p>
+  <p>
+      ส่วนสูง :<ion-input class="txt2" placeholder="กรุณาใส่ส่วนสูง (M)" [(ngModel)]="height"></ion-input>
+  </p>
+  <ion-card>
+    <ion-card-header>
+     ผลการคำนวณ 
+     <ion-badge >{{total |number:'1.2-2'}}</ion-badge>
+    </ion-card-header>
+    <button class ="cal-button" ion-button (click)="clickAlert()">คำนวณ</button>
+    <button class ="cal-button" ion-button (click)="ShowAlert()">เกณฑ์</button>
+  </ion-card>
+
+</ion-content>

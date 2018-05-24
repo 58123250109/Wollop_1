@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      TDEE
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>คำนวณ TDEE</h2>
+
+    <ion-item>
+        <ion-label>พลังงานที่ใช้ไป</ion-label>
+        <ion-select [(ngModel)]="sport">
+          <ion-option value="a" id="a">น้อยหรือไม่ออกเลย</ion-option>
+          <ion-option value="b">1-3 ครั้งต่อสัปดาห์</ion-option>
+          <ion-option value="c">4-5 ครั้งต่อสัปดาห์</ion-option>
+          <ion-option value="d">6-7 ครั้งต่อสัปดาห์</ion-option>
+          <ion-option value="e">วันละ 2 ครั้งขึ้นไป</ion-option>
+        </ion-select>
+      </ion-item>
+    <p>
+        BMR :<ion-input class="txt1" placeholder="กรุณาใส่ค่า BMR" [(ngModel)]="bmr"></ion-input>
+    </p>
+
+    <ion-card>
+      <ion-card-header>
+       ผลการคำนวณ 
+       <ion-badge >{{total |number:'1.2-2'}}</ion-badge>
+      </ion-card-header>
+     
+    </ion-card>
+    
+    <button class ="cal-button" ion-button (click)="calBmi()">คำนวณ</button>
+  </ion-content>
